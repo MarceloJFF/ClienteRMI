@@ -8,7 +8,6 @@ import lombok.Data;
 
 @Data
 public class PhoneBookContact implements Serializable {
-
     private Integer id;
     private List<Contact> contacts = new ArrayList<>() ;
 }

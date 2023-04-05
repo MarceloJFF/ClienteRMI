@@ -10,5 +10,4 @@ public class User implements Serializable{
     private String senha;
     private String name;
     private PhoneBookContact contactBook;
-
 }
