@@ -18,22 +18,15 @@ import com.app.model.Phone;
  */
 public class App {
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
+      
 
         try {
-
-            System.setProperty("java.rmi.server.useCodebaseOnly", "false");
-            // InterfaceRMI<Contact> serviceContact = (InterfaceRMI<Contact>)
-            // Naming.lookup("//localhost/contactController");
-            // Contact contact = new Contact();
-            // System.out.println(serviceContact.get(2));
-            // System.out.println(contact.getName())
-            // InterfaceRMI<Phone> servicePhone = (InterfaceRMI<Phone>)
-            // Naming.lookup("//localhost/phoneController");
-            InterfaceRMI<User> serviceUser = (InterfaceRMI<User>) Naming.lookup("//localhost/userController");
-
-            serviceUser.get(1);
-
-            // p.setContact(contact);
+        
+            InterfaceRMI<Phone> servicePhone = (InterfaceRMI<Phone>)
+            Naming.lookup("rmi://localhost/phoneController");
+            Phone p = servicePhone.get(1);
+            
+            
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
