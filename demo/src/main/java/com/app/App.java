@@ -25,8 +25,9 @@ public class App {
             InterfaceRMI<Phone> servicePhone = (InterfaceRMI<Phone>)
             Naming.lookup("rmi://localhost/phoneController");
             Phone p = servicePhone.get(1);
-            
-            
+            InterfaceRMI<Contact> serviceContact = (InterfaceRMI<Contact>) Naming.lookup("rmi://localhost/contactController");
+            Contact c = serviceContact.get(1);
+            System.out.println(c.getName());
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
